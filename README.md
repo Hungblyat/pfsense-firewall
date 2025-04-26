@@ -61,6 +61,17 @@ Trên giao diện của trang chủ của VM chọn :
   <img src="https://github.com/Hungblyat/pfsense-firewall/blob/main/image/pfsense_card.png" height="450">
 </div>
 
+### VMWare network configurations:
+
+<center>
+
+| Network Card | Type | Subnet IP | Subnet mask | NAT Gateway |
+| ------------ | ------- | ------| ----- | ----- |
+| VMnet1 | Host-only | 192.168.31.0 | 255.255.255.0 | N/A | 
+| VMnet8 | NAT | 192.168.184.0 | 255.255.255.0 | 192.168.184.2 | 
+
+</center>
+
   Thêm các card mạng Vmet1 và Vmet8 vào máy pfsense
   
 ![image](https://github.com/user-attachments/assets/f7ba9b87-f2b8-44e1-937a-82211b0c3b89)
@@ -72,5 +83,23 @@ Trên giao diện của trang chủ của VM chọn :
    - Tiếp theo chọn 2. Set Interfaces Ip address
    - Chọn Card WAN : Configure Ipv4 via dhcp : no , Nhập ipv4 static : 192.168.184.129 , subnet mask(24), upstream gateway 192.168.184.2 (gateway của card Vmet8 ), IPv6: `No`, DHCP: `No`, reverting HTTP: `No`.
    - Tiếp theo cấu hình LAN: giống card WAN , nhưng ko điền mục upstream gateway
+   - Kết quả :
+   - ![image](https://github.com/user-attachments/assets/ae27d646-8a29-4f37-832f-de879e221f31)
+
+Truy cập vào trang Web của pfsense qua địa chỉ đã cấu hình http://192.168.31.2/ để cấu hình cơ bản cho pfSense với thông tin đăng nhập ban đầu là (user: `admin`; password `pfsense`). Các trường có thể cấu hình là :
+- Hostname: `pfsense` mặc định hoặc chỉnh theo ý mình
+- Domain: `home.arpa`
+- Primary DNS Server: `8.8.8.8`
+- Secondary DNS Server: `8.8.4.4`
+- ![image](https://github.com/user-attachments/assets/17ea6fec-1c56-412a-8529-818f30b438bf)
+
+- Timezone: `Asia/Ho Chi Minh` (Your timezone)
+- In **Configure WAN interface**
+  - Selected Type: `DHCP hoặc static`
+  - Static IP Configuration: \<như cấu hình ở trên\>
+  - RFC 1918 Private Network: bỏ các tích  **Block RFC1918 private networks** và **Block bogon networks**
+- In **Configure LAN interface**: \<Giống với cấu hình LAN ở trên \>
+- Có thể chọn đổi mật khẩu hoặc không điền để giữ nguyên mặc định
+- Finished !
 
 
