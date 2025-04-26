@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/c510eaec-d7bd-4534-84a7-39e3fb16e4e6)# pfsense-firewall
+# pfsense-firewall
 
 * Cài đặt pfsense-firewall
     * Cài đặt 
@@ -19,6 +19,9 @@ Nếu muốn tải các bản pfsense cũ hơn có thể truy cập link sau [li
 Sau khi cài đặt về thành công sẽ tiến hành cài đặt trên máy ảo VM ware : 
 
 Trên giao diện của trang chủ của VM chọn : 
-* Create new virtual machine -> Chọn mục Typical -> Chọn 
+* Create new virtual machine -> Chọn mục Typical -> Chọn file iso vừa mới tả -> nhấn next cho đến hết
+<div align="center">
+  <img src=">https://github.com/Hungblyat/pfsense-firewall/blob/main/image/image.png">
+</div
 ### 2. Cài đặt và cấu hình mạng WM ware
    
