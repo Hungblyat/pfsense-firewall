@@ -123,5 +123,54 @@ Trong phần cấu hình luật . Chọn các mục :
 
 ![image](https://github.com/user-attachments/assets/e2a0f027-b89f-4330-9310-8177b8e0240e)
 
+Kết quả : 
+
+![image](https://github.com/user-attachments/assets/87822f15-8a2f-4965-b374-fce24a265d8e)
+
+* Ngăn chặn truy cập các trang Web dùng cổng 80 (http)
+
+Trong phần cấu hình luật . Chọn các mục :
+
+    Action : Block
+    Interfaces : LAN
+    Address Family : IPv4
+    Protocol : TCP
+    Source : LAN net (tất cả các host của subnet 192.168.31.0/24)
+    Destination : any
+    Destination port : 80
+
+Kết quả trước khi có luật : thử với trang http://httpforever.com/
+
+![image](https://github.com/user-attachments/assets/7bf6a228-b1ac-4199-820d-c79c4c3ae65f)
+
+Kết quả sau khi có luật 
+
+![image](https://github.com/user-attachments/assets/daf3c4ae-3d76-4f7b-af30-ffaf5ca93fc8)
+
+* Ngăn chặn truy cập ssh
+
+Trong phần cấu hình luật . Chọn các mục :
+
+    Action : Block
+    Interfaces : LAN
+    Address Family : IPv4
+    Protocol : TCP
+    Source : LAN net (tất cả các host của subnet 192.168.31.0/24)
+    Destination : any
+    Destination port : 22
+
+**2.Phân chia người dùng qua alias**
+* Ta sẽ chia người dùng thành 3 cấp độ :
+    * Cấp 1 : Nhóm người dùng này có khả năng truy cập Internet và không giới hạn các trang Web
+    * Cấp 2 : Nhóm người dùng này có khả năng truy cập Internet và nhưng bị giới hạn các trang Web truy cập như : facebook , chatgpt, qldt.ptit.edu.vn
+    * Cấp 3 : Nhóm người dùng này không có khả năng truy cập Internet
+
+- Chọn Mục Firewall -> Alias -> Add
+![image](https://github.com/user-attachments/assets/2dd7a067-2a8e-4fef-9b87-88f3fb0ff769)
+
+![image](https://github.com/user-attachments/assets/e6b059a7-cda1-460c-8c75-e0f6428099d9)
+
+![image](https://github.com/user-attachments/assets/79854618-5f36-433b-8ab7-5ee93e89e27a)
+
 
 
