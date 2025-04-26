@@ -21,7 +21,7 @@ Sau khi cài đặt về thành công sẽ tiến hành cài đặt trên máy �
 Trên giao diện của trang chủ của VM chọn : 
 * Create new virtual machine -> Chọn mục Typical -> Chọn file iso vừa mới tả -> nhấn next cho đến hết
 <div align="center">
-  <img src="https://github.com/Hungblyat/pfsense-firewall/blob/main/image/image.png">
+  <img src="https://github.com/Hungblyat/pfsense-firewall/blob/main/image/img.png">
 </div>
 * Sau khi cài đặt, máy ảo pfsense sẽ khởi động, chọn theo các bước sau trong hình :
 
