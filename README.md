@@ -9,7 +9,7 @@
    * Web proxy
    * VPN
 ##
-## Cài đặt pfsense 
+## A.Cài đặt pfsense 
 ### 1. Cài đặt
 Có thể tải từ trang Web chính thức của Netgate : [link] (https://www.pfsense.org/download/) 
 
@@ -101,5 +101,27 @@ Truy cập vào trang Web của pfsense qua địa chỉ đã cấu hình http:/
 - In **Configure LAN interface**: \<Giống với cấu hình LAN ở trên \>
 - Có thể chọn đổi mật khẩu hoặc không điền để giữ nguyên mặc định
 - Finished !
+
+##
+
+## B. Cấu hình luật
+**1.Cấu hình các luật cơ bản**
+
+`Các luật trong pfsense hoạt động theo mô hình xử lý các rule từ trên xuống => Tức là nó ưu tiên xử lý các luật ở trên hơn`
+* Ngăn ping trong mạng nội bộ (192.168.31.0/24)
+
+Vào mục Firewall -> Rules -> Chọn LAN -> Add
+
+Trong phần cấu hình luật . Chọn các mục :
+
+    Action : Block
+    Interfaces : LAN
+    Address Family : IPv4
+    Protocol : ICMP
+    Source : Single host or alias '192.168.31.10'
+    Destination : This Firewall
+
+![image](https://github.com/user-attachments/assets/e2a0f027-b89f-4330-9310-8177b8e0240e)
+
 
 
