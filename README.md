@@ -173,4 +173,4 @@ Trong phần cấu hình luật . Chọn các mục :
 ![image](https://github.com/user-attachments/assets/79854618-5f36-433b-8ab7-5ee93e89e27a)
 
 
-
+ss
