@@ -159,11 +159,20 @@ Trong phần cấu hình luật . Chọn các mục :
     Destination : any
     Destination port : 22
 
+Kết quả trước khi có luật (Vẫn có thể ssh đến 1 ssh server là 192.168.184.136 trên mạng WAN)
+
+<img src="https://github.com/user-attachments/assets/8b23c352-0e89-4e9d-8e55-8db0bdbdaf0c" height="400">
+
+Kết quả sau khi có luật :
+
+![image](https://github.com/user-attachments/assets/8b648b04-53e3-4411-b60c-cc1077dc4e0a)
+
+![image](https://github.com/user-attachments/assets/83e57f71-69b3-4b48-91bd-46ed118f580a)
+
 **2.Phân chia người dùng qua alias**
-* Ta sẽ chia người dùng thành 3 cấp độ :
+* Ta sẽ chia người dùng thành 2 cấp độ :
     * Cấp 1 : Nhóm người dùng này có khả năng truy cập Internet và không giới hạn các trang Web
     * Cấp 2 : Nhóm người dùng này có khả năng truy cập Internet và nhưng bị giới hạn các trang Web truy cập như : facebook , chatgpt, qldt.ptit.edu.vn
-    * Cấp 3 : Nhóm người dùng này không có khả năng truy cập Internet
 
 - Chọn Mục Firewall -> Alias -> Add
 ![image](https://github.com/user-attachments/assets/2dd7a067-2a8e-4fef-9b87-88f3fb0ff769)
@@ -172,5 +181,17 @@ Trong phần cấu hình luật . Chọn các mục :
 
 ![image](https://github.com/user-attachments/assets/79854618-5f36-433b-8ab7-5ee93e89e27a)
 
+Thêm alias 1 số Webpage dùng để chặn người dùng cấp 2 truy cập 
 
-ss
+![image](https://github.com/user-attachments/assets/6a2d8191-abe8-413e-a8c6-46d304390a5a)
+
+* Thử nghiêm :
+- Với người dùng cấp 2 
+![image](https://github.com/user-attachments/assets/7f48c073-90c8-4033-95e0-821bc0fddc52)
+
+![image](https://github.com/user-attachments/assets/25ef3117-aa9e-4cea-8a84-6543036f6d5a)
+
+=> Có thể thấy người dùng cấp 2 có ip là 192.168.31.20 ko thể kết nối tới những trang Web này nhưng vẫn có Internet nhé ở đây thử với Shoppe vẫn ok 
+=> Lưu ý do facebook.com có nhiều ip nên đôi khi không ngăn chặn việc truy cập facebook nên ta nên liệt kê bằng cách chỉ rõ các ip của facebook thì sẽ chắc chắn chặn đươc hơn
+
+
